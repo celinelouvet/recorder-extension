@@ -33,10 +33,26 @@ var ChromeHelper = (function () {
     });
   }
 
+  function capturePage(tabId, callback) {
+    chrome.pageCapture.saveAsMHTML({tabId: tabId}, callback);
+  }
+
+  function createTabFromBlob(blob) {
+    var url = URL.createObjectURL(blob);
+    var options = {
+      url: url,
+      active: false
+    };
+    chrome.tabs.create(options, function () {
+    });
+  }
+
   return {
     setBadgeText: setBadgeText,
     setIcon: setIcon,
     createNotification: createNotification,
-    clearNotification: clearNotification
+    clearNotification: clearNotification,
+    capturePage: capturePage,
+    createTabFromBlob: createTabFromBlob
   };
 })();
