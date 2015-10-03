@@ -8,10 +8,12 @@
     "default_title": "Start recording activity"
   },
   "background": {
-    "scripts": ["scripts/background.js"],
+    "page": "background.html",
     "persistent": false
   },
   "permissions": [
-    "notifications"
+    "tabs",
+    "notifications",
+    "pageCapture"
   ]
 }
