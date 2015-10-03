@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+  "name": "activity-recorder",
+  "description": "Record console, request during navigation in your application",
+  "version": "1.0.0",
+  "browser_action": {
+    "default_icon": "images/not-recording.png",
+    "default_title": "Start recording activity"
+  },
+  "background": {
+    "scripts": ["scripts/background.js"],
+    "persistent": false
+  },
+  "permissions": [
+    "notifications"
+  ]
+}
