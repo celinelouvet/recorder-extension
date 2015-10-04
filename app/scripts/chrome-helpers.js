@@ -2,6 +2,8 @@
 
 var ChromeHelper = (function () {
 
+  var console = chrome.extension.getBackgroundPage().console;
+
   function setIcon(url) {
     var icon = {
       path: url
@@ -48,6 +50,7 @@ var ChromeHelper = (function () {
   }
 
   return {
+    console: console,
     setBadgeText: setBadgeText,
     setIcon: setIcon,
     createNotification: createNotification,
